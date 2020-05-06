@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Up</title>
+</head>
+
+<body>
+
+    <!-- Home -->
+    <header>
+        <h1>QUIZ UP</h1>
+    </header>
+    <div class=" start-div" id="startGame">
+        <img src="https://res.cloudinary.com/lolamedina/image/upload/v1588790642/frontend%20task/Quiz%20App/vbg_tp7umm.png"
+            alt="group of women"><br>
+        <button class="start-btn " id="startBtn">Start</button>
+    </div>
+    <!-- Main Game -->
+    <main>
+        <!-- scoreboard -->
+        <div class="stats-bar hide" id="statsBar">
+            <ul>
+                <li class="score"><img
+                        src="https://res.cloudinary.com/lolamedina/image/upload/v1588790641/frontend%20task/Quiz%20App/scoreboard_re5pap.png"
+                        alt="" width="30px"> <span id="score"></span> / 50
+                </li>
+                <!-- score display -->
+
+                <li class="quest"><img
+                        src="https://res.cloudinary.com/lolamedina/image/upload/v1588790641/frontend%20task/Quiz%20App/education_vpulve.svg"
+                        width="30px"><span id="questCount"></span> &nbsp; of
+                    &nbsp; <span id="maxQuest"></span></li>
+                <!-- questiton count -->
+            </ul>
+        </div>
+
+        <!-- question container -->
+        <div class="wrapper hide">
+            <div class="question-container" id="questionContainer">
+                <div class="question" id="question">
+                    <h3>ipsum, dolor sit amet consectetur adipisicing elit. Ut, ipsa.</h3>
+                </div>
+                <div class="button-grid" id="answerBtn">
+                    <buttton class="btn">Option 1</buttton>
+                    <buttton class="btn">Option 2</buttton>
+                    <buttton class="btn">Option 3</buttton>
+                    <buttton class="btn">Option 4</buttton>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <button id="nextBtn" class=" next-btn hide">Next</button>
+        <!-- Closing Page -->
+        <div class="try-again hide">
+            <img src="https://res.cloudinary.com/lolamedina/image/upload/v1588800498/frontend%20task/Quiz%20App/dead_a1satm.svg"
+                alt="" class="last hide">
+            <img src="https://res.cloudinary.com/lolamedina/image/upload/v1588800492/frontend%20task/Quiz%20App/trophy_pjvty6.svg" alt=" emoji" class="first hide">
+            <img src="https://res.cloudinary.com/lolamedina/image/upload/v1588800876/frontend%20task/Quiz%20App/cool_dceuis.svg" alt="emoji" class="second hide">
+            <img src="https://res.cloudinary.com/lolamedina/image/upload/v1588800876/frontend%20task/Quiz%20App/thinking_mjac2j.svg" alt="emoji" class="third hide">
+            <img src="https://res.cloudinary.com/lolamedina/image/upload/v1588800507/frontend%20task/Quiz%20App/shocked_2_eme4hm.svg" alt="emoji" class="fourth hide">
+            <h3 class="finalResult">Lorem ipsum dolor sit amet.</h3>
+            <button id="replay">Play again</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
