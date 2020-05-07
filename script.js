@@ -22,6 +22,11 @@ let rating;
 //event listners for control buttons
 startBtn.addEventListener('click', init);
 nextBtn.addEventListener('click', nextQuestion);
+replayBtn.addEventListener('click', restart);
+
+function restart(){
+    location.reload();
+}
 
 
 
@@ -75,6 +80,9 @@ function checkAnswer(obj) {
     }
     else {
         obj.classList.add('wrong');
+        if(choices.textcontent == quiz[index].correct){
+            console.log( `the answer is`+ quiz[index].correct)
+        }
     }
 
 };
@@ -90,6 +98,7 @@ function nextQuestion() {
     index++;
     getQuiz();
     questCount.textContent = index + 1;
+    document.querySelector('#info').className = 'hide';
     reset();
 };
 
@@ -146,21 +155,21 @@ function finalScore() {
 
 const quiz = [
     {
-        question: 'Sleep is for the?',
-        answers: ['Brave', 'Dead', 'Strong', 'Weak'],
-        correct: 'Weak'
+        question: ' The longest river in Africa is?',
+        answers: ['Niger', 'Limpopo', 'Nile', 'Benue'],
+        correct: 'Nile'
     },
 
     {
-        question: "How many 0.5cm slices of bread can you cut from a whole bread that's 25cm long?",
-        answers: ['25', '1', 'None', '39'],
-        correct: '1'
+        question: "Which zodiac star sign is associated with the twins?",
+        answers: ['Gemini', 'Scorpio', 'Aries', 'Cancer'],
+        correct: 'Gemini'
     },
 
     {
-        question: `There are two clocks of different colors: The red clock is broken and doesn't run at all, but the blue clock loses one second every 24 hours. Which clock is more accurate?`,
-        answers: ['Neither', 'Red', 'Blue', 'Both'],
-        correct: 'Red'
+        question: "How many countries make up the United Kingdom",
+        answers: ['Three', 'Four', 'Nine', 'Twelve'],
+        correct: 'Four'
     },
 
     {
@@ -170,8 +179,8 @@ const quiz = [
     },
 
     {
-        question: 'Divide 30 by half and add ten.',
-        answers: ['45.5', '70', '67', '30'],
-        correct: '70'
+        question: 'What is the only even positive prime number?',
+        answers: ['4', '6', '100', '2'],
+        correct: '2'
     }
 ];
