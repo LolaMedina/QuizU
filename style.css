@@ -13,15 +13,14 @@ body {
 }
 
 main{
-    margin-top: 0px;
     width: 100%;
+    height: auto;
 }
-
 h1 {
     text-align: center;
     color: white;
-    font-size: 40px;
-    letter-spacing: 8px;
+    font-size: 2em;
+    letter-spacing: 5px;
 }
 
  .start-div {
@@ -29,6 +28,7 @@ h1 {
 }
 
 .start-div img {
+    margin-top: 12vh;
     width: 500px;
     max-width:90% ;
     height: auto;
@@ -78,9 +78,9 @@ h1 {
 }
 
 .stats-bar p{
-    text-align: center;
+     text-align: center; 
     color: white;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 ul {
@@ -112,10 +112,11 @@ ul li {
 }
 
 .wrapper {
-    margin: 10px auto;
+    margin: 0px auto;
     background-color: white;
     width: 550px;
     max-width: 80%;
+    height: auto;
     border-radius: 10px;
     /* height: auto; */
 }
@@ -138,7 +139,7 @@ ul li {
     display: grid;
     grid-template-columns: repeat(autofit, minmax(60px, auto));
     gap: 1em;
-    margin-top: 50px;
+    margin-top: 20px;
     padding-bottom: 10px;
 }
 
@@ -182,6 +183,7 @@ ul li {
 }
 
     @media screen and (min-width: 650px) {
+    
         .button-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
