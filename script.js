@@ -75,7 +75,6 @@ function checkAnswer(obj) {
     const check = isCorrect ? obj.classList.add('correct') : obj.classList.add('wrong');
     
    correctAnswer =answerButton.children[quiz[index].value]
-   console.log(correctAnswer)
    correctAnswer.classList.add('correct')
 
 }
@@ -87,7 +86,6 @@ function nextQuestion() {
     }
     if (index === 4) {
         gameOver();
-        console.log('over');
     }
     index++;
     getQuiz();
