@@ -7,7 +7,9 @@
 
 body {
     margin: 0;
+     padding: 20px; 
     padding: 20px;
+     padding: 20px; 
     height: 100vh;
     background-color: rgb(34, 34, 58);
 }
@@ -73,7 +75,7 @@ h1 {
     max-width: 80%;
     margin: 0 auto;
     position: relative;
-    top: 50px;
+    /* top: 50px; */
     right: 33px
 }
 
@@ -115,10 +117,10 @@ ul li {
     margin: 0px auto;
     background-color: white;
     width: 550px;
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
-    /* height: auto; */
+    margin-top: -50px;
 }
 
 .question-container {
@@ -216,10 +218,30 @@ ul li {
             width: 200px;
             text-align: center;
         }
+
+        .stats-bar {
+            width: 500px;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            top: 50px; 
+            right: 33px
+        }
+
+        main{
+            height: 70%;
+        }
+
+        .wrapper{
+            margin-top: 50px
+        }
     }
 
     @media screen and (max-width: 320px){
         ul li{
-            font-size: 0.5em;
+            font-size: 0.6em;
+        }
+        ul li img {
+            width: 25px;
         }
     }
