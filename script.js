@@ -19,6 +19,7 @@ let score = 0;
 isCorrect = false;
 let rating;
 let review;
+let correctAnswer;
 
 //event listners for control buttons
 startBtn.addEventListener('click', init);
@@ -30,8 +31,6 @@ function restart() {
     location.reload();
 }
 
-
-
 //initialize  game
 function init() {
     startGame.classList.add('hide');
@@ -41,11 +40,10 @@ function init() {
     getQuiz();
 }
 
-//get quiz questions
+//get quiz questions and options
 function getQuiz() {
     question.textContent = quiz[index].question;
 
-    //displays options for each question
     choices.forEach(function (choices, i) {
         choices.textContent = quiz[index].answers[i];
         selectAnswer();
@@ -57,7 +55,7 @@ function selectAnswer() {
     answerButton.addEventListener('click', (e) => {
 
         selectBtn = e.target;
-        if ((selectBtn.innerText === quiz[index].correct) && (selectBtn.className === 'btn')){
+        if ((selectBtn.textContent === quiz[index].correct) && (selectBtn.className === 'btn')) {
             isCorrect = true;
             checkAnswer(selectBtn);
             score += 10;
@@ -66,21 +64,20 @@ function selectAnswer() {
         else {
             isCorrect = false;
             checkAnswer(selectBtn);
-        }
-
+            }    
         answerButton.style.pointerEvents = 'none'; //prevents me from clicking another answer
         nextBtn.classList.remove('hide'); // displays the control div for next 
     });
 };
 
-// checks if selected answer is correct
+// checks if selected answer is correct 
 function checkAnswer(obj) {
-    if (isCorrect) {
-        obj.classList.add('correct');
-    }
-    else {
-        obj.classList.add('wrong');
-    }
+    const check = isCorrect ? obj.classList.add('correct') : obj.classList.add('wrong');
+    
+   correctAnswer =answerButton.children[quiz[index].value]
+   console.log(correctAnswer)
+   correctAnswer.classList.add('correct')
+
 }
 
 //displays the next question
@@ -97,7 +94,7 @@ function nextQuestion() {
     questCount.textContent = index + 1;
     document.querySelector('#info').className = 'hide';
     reset();
-};
+}
 
 //takes user to the end page
 function gameOver() {
@@ -108,12 +105,12 @@ function gameOver() {
     finalScore();
 }
 
-
 function reset() {
     startBtn.classList.remove('hide');
     answerButton.style.pointerEvents = 'auto';
     selectBtn.classList.remove('correct');
     selectBtn.classList.remove('wrong');
+    correctAnswer.classList.remove('correct')
     nextBtn.classList.add('hide');
 }
 //displays final score to user
@@ -157,7 +154,7 @@ function finalScore() {
     }
 }
 
- //quiz questions
+//quiz questions
 const quiz = [
     {
         question: ' The longest river in Africa is?',
